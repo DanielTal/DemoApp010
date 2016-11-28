@@ -1,0 +1,2 @@
+1.20.1
+angular2/transform/codegen,initialize,initialize/build/loader_replacer,polymer_interop/src/build/minify_transformer,reflectable/src/transform_import,web_components,web_components/build/mirrors_remover
