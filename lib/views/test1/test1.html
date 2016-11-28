@@ -10,13 +10,55 @@
 </style>
 <hr/>
 <!-- version 3 -->
-<div>
+<div dir="rtl">
     <paper-spinner active class="thick"></paper-spinner>
     <paper-button raised class="indigo">raised</paper-button>
 
-    <paper-dropdown-menu label="עיר">
-    <paper-listbox class="dropdown-content" selected="1">
-        <paper-item *ngFor="let item of list1">{{item.Name}}</paper-item>
+    <paper-dropdown-menu dir="rtl" label="עיר">
+    <paper-listbox dir="rtl" class="dropdown-content" selected="1">
+        <paper-item dir="rtl" *ngFor="let item of list1">{{item.Name}}</paper-item>
     </paper-listbox>
-    </paper-dropdown-menu>    
+    </paper-dropdown-menu>
+
+
+<paper-button raised (click)="openBy($event)">modal dialog</paper-button>
+
+<paper-dialog id="modal" modal>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="buttons">
+    <paper-button dialog-confirm autofocus>Tap me to close</paper-button>
+  </div>
+</paper-dialog>
+
+<div style="width:300px">
+    <paper-input label="שם פרטי עד 10 תווים" char-counter maxlength="10"></paper-input>
+</div>
+
+
+
+<label id="label3">Dinosaurs:</label>
+<paper-radio-group selected="b" allow-empty-selection aria-labelledby="label3">
+  <paper-radio-button name="a">allosaurus</paper-radio-button>
+  <paper-radio-button name="b">brontosaurus</paper-radio-button>
+  <paper-radio-button name="d" disabled>diplodocus</paper-radio-button>
+</paper-radio-group>
+
+<paper-radio-group selected="bbb" allow-empty-selection aria-labelledby="פרמטר">
+  <paper-radio-button name="aaa">אופציה 1</paper-radio-button>
+  <paper-radio-button name="bbb">אופציה 2</paper-radio-button>
+  <paper-radio-button name="ccc" disabled>אופציה 3</paper-radio-button>
+</paper-radio-group>
+
+
+<input is="iron-input" prevent-invalid-input allowed-pattern="[0-9]"/>
+
+
+
+<script>
+  function openBy(element) {
+    alignedDialog.positionTarget = element;
+    alignedDialog.open();
+  }
+</script>
+        
 </div>
